@@ -1,60 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/custom.css">
-    <title>My Website</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<title>Zhanlun Ng | My Website</title>
 </head>
 <body>
-    <div class="jumbotron mb-0" id="jumbo">
-        <h1 class="display-9">Hello, world.</h1>
-        <p class="lead">I'm Ng Zhan Lun. Welcome to my simple website.</p>
-        <hr class="my-4">
-        <p>Have a look at some of my personal projects here.</p>
-        <div class="row">
-            <div class="col-sm">
-                <div class="card border-primary mb-3" style="max-width: 15rem;">
-                    <div class="card-body">
-                        <h4 class="card-title">Vanilla JavaScript</h4>
-                        <p class="card-text">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card border-info mb-3" style="max-width: 15rem;">
-                    <div class="card-body">
-                        <h4 class="card-title">React</h4>
-                        <p class="card-text">
-                            <ul>
-                                <li><a href="./react-step-form" target="_blank">React Form with Material UI</a></li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm">
-                
-            </div>
-            <div class="col-sm">
+	<div class="container">
+		<section id="home">
+			<div class="main-content">
+			<h1>Zhanlun Ng / the 
+				<!-- data-wait : pause time when finished typing -->
+				<span class="txt-type" data-wait="3000" data-words='["Coder", "Creator", "Dreamer"]'></span>
+			</h1>
+			<p class="lead">Hello there, welcome to my site.</p>
+			<p class="lead">Scroll down to get to know more about me.</p>
+			</div>
+			<a href="#about"><img src="img/down-arrow.png" class="arrow"></a>
+		</section>
 
-            </div>
-        </div>
-    </div>
+		<section id="about">
+			<!-- <a href="#home"><img src="up-arrow.png" class="arrow"></a> -->
+			<div class="main-content">
+				<h1>About me</h1>
+				<div class="container-content">
+					<div class="gridbox">
+						<h2>Background</h2>
+						<p>Currently studying at University of Technology, Malaysia (UTM)</p>
+						<p>Pursuing Bachelor of Computer Science (Data Engineering)</p>
+						<p>Interested in software development and data analytics</p>
+						<p></p>
+					</div>
+					<div class="gridbox">
+						<h2>Accomplishments</h2>
+						<p>E-Genting Programming Competition 2019 <em>(Merit)</em> using Python & SQL</p>
+						<p>Work-based learning: system development for V3X using PHP and MySQL</p>
+					</div>
+				</div>
+			</div>
+			<a href="#projects"><img src="img/down-arrow-white.png" class="arrow"></a>
+		</section>
 
+		<section id="projects">	
+			<!-- <a href="#about"><img src="up-arrow.png" class="arrow"></a> -->
+			<div class="main-content">
+				<h1>Projects</h1>
+				<div class="container-content">
+					<div class="gridbox">
+						<h2>Web App</h2>
+						<a href="https://zhanlun.github.io/tic-tac-toe-AI/" target="_blank"><p>Tic-tac-toe AI</p></a>
+						<a href="https://zhanlun.github.io/desktop-virtual-piano/" target="_blank"><p>Virtual piano</p></a>
+						<p></p>
+					</div>
+				</div>
+			</div>
+			<a href="#contact"><img src="img/down-arrow-white.png" class="arrow"></a>
+		</section>
 
-    <footer>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-0 mb-0">
-            <a class="navbar-brand mx-auto" href="#">&copy; 2019 Ng Zhan Lun </a>
-        </nav>
-    </footer>
+		<section id="contact">
+			<div class="main-content">
+				<h1>Contact</h1>
+				<p class="lead">Email: <a class="email" href="mailto:zhanlun.ng@gmail.com">zhanlun.ng@gmail.com</a></p>
+				<p class="lead">(Currently seeking for internship)</p>
+			</div>
+			<a href="#home"><img src="img/up-arrow-white.png" class="arrow"></a>
+			<p class="lead" style="margin-bottom: 20px;">&copy; 2020 Zhanlun Ng</p>
+		</section>
+	</div>
+
+	<script src="main.js"></script>
+
 </body>
 </html>
