@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+  }
+
+body {
+	font-family: 'Raleway', sans-serif;
+	height: 100vh;
+	background-color: #e5e338;
+	color: #000;
+	overflow: hidden;
+	line-height: 1.4;
+}
+
+#about {
+	background-color: #4ec5c1;
+	color: #fff;
+}
+
+
+#projects {
+	background-color: #ec576b;
+	color: #fff;
+}
+
+#contact {
+	background-color: #000;
+	color: #fff;
+}
+
+#about > div > div > .gridbox {
+	background-color: #fff;
+	color: #4ec5c1;
+}
+
+#projects > div > div > .gridbox {
+	background-color: #fff;
+	color: #ec576b;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	/* CSS Smooth Scroll */
+	overflow-y: scroll; 
+	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+}
+.lead {
+	font-size: 1.5rem;
+}
+
+.arrow {
+	width: 10vw;
+	height: 10vh;
+}
+
+.arrow:hover {
+	opacity: 0.5;
+	filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+	
+	/* Scroll Snap */
+	scroll-snap-align: center;
+}
+
+section .main-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 90vh;
+	width: 90%;
+}
+
+section h1 {
+	/* margin-top: 40vh; */
+	font-size: 4rem;
+}
+
+.container-content {
+	width: 90%;
+	display: grid;
+	justify-content: space-evenly;
+	grid-template-columns: 40% 40%; /*Make the grid smaller than the container*/
+	grid-gap: 10px;
+}
+
+/* projects, only one category now */
+#projects > div > .container-content {
+	grid-template-columns: 40%;
+}
+
+.gridbox {
+	margin-top: 2em;
+	background-color: #fff;
+	text-align: left;
+	font-size: 1.2rem;
+	padding: 10px 10px;
+}
+
+.gridbox p {
+	margin: 1rem auto;
+}
+
+
+/* Cursor */
+.txt-type > .txt {
+	border-right: 0.2rem solid #999;
+}
+
+.email {
+	text-decoration: none;
+	color: #fff;
+}
+
+@media(max-width: 840px) {
+	.container-content {
+		display: block;
+	}
+	
+	.gridbox {
+		margin: 2em auto;
+		font-size: 0.7rem;
+		padding: 6px 6px;
+	}
+
+	.gridbox p {
+		margin: 0.7rem auto;
+	}
+	section h1 {
+		font-size: 2rem;
+	}
+
+	.lead{
+		margin-top: 10px;
+		font-size: 1rem;
+	}
+
+}
