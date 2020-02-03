@@ -8,21 +8,24 @@
 	<title>Zhanlun Ng | My Website</title>
 </head>
 <body>
-	<div class="container">
-		<section id="home">
+	<div class="container" id="wall">
+		<section id="home" class="section section-1">
 			<div class="main-content">
-			<h1>Zhanlun Ng / the 
+			<h1>Zhanlun Ng {</h1>
+			<br>
 				<!-- data-wait : pause time when finished typing -->
-				<span class="txt-type" data-wait="3000" data-words='["Coder", "Creator", "Dreamer"]'></span>
+				<h2 class="words">
+					<span class="txt-type" data-wait="2000"></span>
+				</h2>
+			<h1>}
 			</h1>
 			<p class="lead">Hello there, welcome to my site.</p>
 			<p class="lead">Scroll down to get to know more about me.</p>
 			</div>
-			<a href="#about"><img src="img/down-arrow.png" class="arrow"></a>
+			<div class="next"><img src="img/down-arrow.png" class="arrow"></div>
 		</section>
 
-		<section id="about">
-			<!-- <a href="#home"><img src="up-arrow.png" class="arrow"></a> -->
+		<section id="about" class="section section-2">
 			<div class="main-content">
 				<h1>About me</h1>
 				<div class="container-content">
@@ -34,43 +37,52 @@
 						<p></p>
 					</div>
 					<div class="gridbox">
-						<h2>Accomplishments</h2>
+						<h2>Highlights</h2>
 						<p>E-Genting Programming Competition 2019 <em>(Merit)</em> using Python & SQL</p>
 						<p>Work-based learning: system development for V3X using PHP and MySQL</p>
 					</div>
 				</div>
 			</div>
-			<a href="#projects"><img src="img/down-arrow-white.png" class="arrow"></a>
+			<div class="next"><img src="img/down-arrow-white.png" class="arrow"></div>
 		</section>
 
-		<section id="projects">	
-			<!-- <a href="#about"><img src="up-arrow.png" class="arrow"></a> -->
+		<section id="projects" class="section section-3">	
 			<div class="main-content">
 				<h1>Projects</h1>
 				<div class="container-content">
 					<div class="gridbox">
-						<h2>Web App</h2>
+						<h2>Web Development</h2>
 						<a href="https://zhanlun.github.io/tic-tac-toe-AI/" target="_blank"><p>Tic-tac-toe AI</p></a>
 						<a href="https://zhanlun.github.io/desktop-virtual-piano/" target="_blank"><p>Virtual piano</p></a>
-						<p></p>
+					</div>
+					<div class="gridbox">
+						<h2>Data Analytics</h2>
+						<a href="https://github.com/zhanlun/SpotifyFeatureProject/blob/master/SpotifyFeatures.ipynb" target="_blank"><p>Spotify tracks features</p></a>
 					</div>
 				</div>
 			</div>
-			<a href="#contact"><img src="img/down-arrow-white.png" class="arrow"></a>
+			<div class="next"><img src="img/down-arrow-white.png" class="arrow"></div>
 		</section>
 
-		<section id="contact">
+		<section id="contact" class="section section-4">
 			<div class="main-content">
 				<h1>Contact</h1>
 				<p class="lead">Email: <a class="email" href="mailto:zhanlun.ng@gmail.com">zhanlun.ng@gmail.com</a></p>
 				<p class="lead">(Currently seeking for internship)</p>
 			</div>
-			<a href="#home"><img src="img/up-arrow-white.png" class="arrow"></a>
-			<p class="lead" style="margin-bottom: 20px;">&copy; 2020 Zhanlun Ng</p>
+			<div class="next"><img src="img/up-arrow-white.png" class="arrow"></div>
+			<p class="lead" style="margin-bottom: 20px;">Made with &hearts; by Zhanlun Ng</p>
 		</section>
 	</div>
+	<ul class="dot" data-wall-section-nav>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
 
+	<!-- Customized wall.js, for full page effect. -->
+	<script src="wall.js"></script>
 	<script src="main.js"></script>
-
 </body>
 </html>
