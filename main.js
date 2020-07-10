@@ -79,9 +79,9 @@ function init() {
 	// const words = JSON.parse(txtElement.getAttribute('data-words'));
 	const wait = txtElement.getAttribute('data-wait');
 	const words = [
-		'"web": [JS, PHP, Node.js, ...]', 
+		'"web": [ASP.NET, PHP, JS ...]', 
 		'"analytics": [Python, Tableau, ...]',
-		'"database": [MySQL, Oracle 11g, ...]'
+		'"others": [Git, Linux, UML ...]'
 	]
 	// Init Typewriter
 	new TypeWriter(txtElement, words, wait);
