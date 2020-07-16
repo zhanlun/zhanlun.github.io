@@ -164,7 +164,7 @@ section h1 {
 
 
 
-@media(max-width: 800px) {
+@media screen and (max-width: 800px) and (min-height: 500px) {
 	.container-content {
 		display: block;
 	}
@@ -189,6 +189,118 @@ section h1 {
 	.lead{
 		margin-top: 10px;
 		font-size: 1rem;
+	}
+
+	.dot {
+		right: 10px;
+	}
+
+	.dot>li {
+	width: 8px;
+	height: 8px;
+	}
+}
+
+@media screen and (max-height: 500px) and (min-height: 350px) {
+	.container-content {
+		display: block;
+	}
+	
+	.gridbox {
+		margin: 1.6em auto;
+		font-size: 0.5rem;
+		padding: 5px 5px;
+	}
+
+	.gridbox p {
+		margin: 0.7rem auto;
+	}
+	section h1 {
+		font-size: 1.2rem;
+	}
+
+	.words {
+		font-size: 0.8rem;
+	}
+
+	.lead{
+		margin-top: 10px;
+		font-size: 0.6rem;
+	}
+
+	.dot {
+		right: 10px;
+	}
+
+	.dot>li {
+	width: 8px;
+	height: 8px;
+	}
+}
+
+@media screen and (max-height: 350px) and (min-height: 200px) {
+	.container-content {
+		display: block;
+	}
+	
+	.gridbox {
+		margin: 1.6em auto;
+		font-size: 0.2rem;
+		padding: 4px 4px;
+	}
+
+	.gridbox p {
+		margin: 0.5rem auto;
+	}
+	section h1 {
+		font-size: 0.6rem;
+	}
+
+	.words {
+		font-size: 0.4rem;
+	}
+
+	.lead{
+		margin-top: 10px;
+		font-size: 0.3rem;
+	}
+
+	.dot {
+		right: 10px;
+	}
+
+	.dot>li {
+	width: 8px;
+	height: 8px;
+	}
+}
+
+
+@media screen and (max-height: 200px) {
+	.container-content {
+		display: block;
+	}
+	
+	.gridbox {
+		margin: 1.6em auto;
+		font-size: 0.2rem;
+		padding: 2px 2px;
+	}
+
+	.gridbox p {
+		margin: 0.1rem auto;
+	}
+	section h1 {
+		font-size: 0.4rem;
+	}
+
+	.words {
+		font-size: 0.3rem;
+	}
+
+	.lead{
+		margin-top: 6px;
+		font-size: 0.3rem;
 	}
 
 	.dot {
