@@ -47,6 +47,7 @@ class MyCat extends React.Component {
     render() {
         return (
             <svg viewBox="0 0 1210.000000 1210.000000"
+                {...this.props}
                 preserveAspectRatio="xMidYMid meet" id="mycat-svg">
 
                 {/* <rect width="100%" height="100%" fill={this.state.backgroundColor}/> */}

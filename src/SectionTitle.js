@@ -11,7 +11,6 @@ export const SectionTitle = ({ children, colorClass }) => {
         inline-block
         leading-7 py-4 text-2xl md:text-4xl
         font-bold tracking-wide
-        mt-4
         transform
         duration-200
         ease-in-out
