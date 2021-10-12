@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.animated-text:hover span {
+  transform: translateX(3rem);
+}
+
+.animated-text:hover a {
+  transform: translateX(2rem);
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #000;
+  background: #e8ea26;
+}
+
+::selection {
+  color: #000;
+  background: #e8ea26;
+}
+
+.link-name-list-item:hover span {
+  transform: translateX(2rem);
+  background: #000;
+}
+
+.section-div {
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+.section-div::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  height: 9px;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(232, 234, 38, 1);
+  border: none;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(232, 234, 38, .8);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(100, 100, 100, 0.5);
+}
