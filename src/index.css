@@ -2,6 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+
 .animated-text:hover span {
   transform: translateX(3rem);
 }
@@ -26,15 +30,10 @@
   background: #000;
 }
 
-.section-div {
-  /* IE and Edge */
-  -ms-overflow-style: none;
-  /* Firefox */
-  scrollbar-width: none;
-}
-
-.section-div::-webkit-scrollbar {
-  display: none;
+.link-name-list-item .active span {
+  transform: translateX(2rem);
+  background: #000;
+  color: #e8ea26;
 }
 
 ::-webkit-scrollbar {
@@ -54,4 +53,28 @@
 
 ::-webkit-scrollbar-track {
   background: rgba(100, 100, 100, 0.5);
+}
+
+/* 
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section-div {
+  scroll-snap-align: start end;
+}
+
+.section-div::-webkit-scrollbar {
+  display: none;
+} */
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.section-div {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

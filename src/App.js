@@ -2,13 +2,14 @@ import MyCat from "./MyCat";
 import { AnimatedHeading } from "./AnimatedHeading";
 import { FullPage, Slide } from 'react-full-page';
 import { SectionTitle } from "./SectionTitle";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { SkillBadge } from "./SkillBadge";
 import { StyledParagraph } from "./StyledParagraph";
 import { SectionDiv } from "./components/SectionDiv";
 import { SectionContent } from "./components/SectionContent";
 import { StyledCard } from "./components/Card/StyledCard";
 import { CardSubtitle } from "./components/Card/CardSubtitle";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const linkNameList = ['Home', 'About', 'Experience', 'Projects', 'Contact']
 const skillList = [
@@ -22,8 +23,7 @@ const skillList = [
   'PHP',
 ]
 
-function CustomControls({ getCurrentSlideIndex, scrollToSlide }) {
-  const currentSlideIndex = getCurrentSlideIndex();
+function CustomControls({ activeSectionId }) {
 
   return (
     <div className="fixed right-12 top-20 hidden sm:block">
@@ -33,19 +33,20 @@ function CustomControls({ getCurrentSlideIndex, scrollToSlide }) {
             linkNameList.map((linkName, idx) => (
               <li
                 key={linkName}
-                onClick={() => idx !== currentSlideIndex && scrollToSlide(idx)}
                 className={`link-name-list-item
                 cursor-pointer
                 hover:text-epicyellow-light
-                ${currentSlideIndex === idx ? 'text-epicyellow-normal' :
-                    'text-gray-50'}
+                text-gray-50
                 `}
               >
-                <span className={`inline-block transform duration-75 py-4
-                ${currentSlideIndex === idx && 'translate-x-8 bg-black'}
-                `}>
+                <a href={`#section-${idx + 1}`}
+                  className={`${activeSectionId === `section-${idx + 1}` && 'active'}`}
+                >
+                  <span className={`inline-block transform duration-75 py-4
+                  `}>
                   {linkName}
                 </span>
+                </a>
               </li>
             ))
           }
@@ -54,35 +55,29 @@ function CustomControls({ getCurrentSlideIndex, scrollToSlide }) {
     </div>
   )
 }
-function App() {
-  const [scrollMode, setScrollMode] = useState('full-page')
-  const [scrollY, setScrollY] = useState(0)
 
-  const handleWheel = (e) => {
-    setScrollY(window.scrollY)
-  }
+
+function App() {
+  const [activeSectionId, setActiveSectionId] = useState('section-1')
 
   return (
     <div
-      className="relative"
-      onWheel={handleWheel}
+      className="relative scroll-container"
     >
+      <CustomControls activeSectionId={activeSectionId} />
 
-      <FullPage controls={CustomControls} duration={500}
-        scrollMode={scrollMode} // if some content need nested scroll container, can set to normal dynamically
-      >
-        <Slide>
-          <div className="h-full flex items-center w-full sm:w-3/4 xl:w-1/2 ml-2 sm:ml-6 xl:ml-24">
-            <div className="flex flex-col w-full">
-              <AnimatedHeading defaultText="Hello." colorClass="text-gray-50" />
-              <AnimatedHeading defaultText="I'm" colorClass="text-epicyellow-normal" />
-              <AnimatedHeading defaultText="as dfgq qwae" colorClass="text-epicyellow-normal" name />
-            </div>
-          </div>
-        </Slide>
+      {/* TODO
+        PUT LOGIC INTO SECTION-1
+      */}
+      <div id="section-1" className="h-screen flex items-center w-full sm:w-3/4 xl:w-1/2 section-div">
+        <div className="flex flex-col w-full">
+          <AnimatedHeading defaultText="Hello." colorClass="text-gray-50" />
+          <AnimatedHeading defaultText="I'm" colorClass="text-epicyellow-normal" />
+          <AnimatedHeading defaultText="as dfgq qwae" colorClass="text-epicyellow-normal" name />
+        </div>
+      </div>
 
-        <Slide>
-          <SectionDiv setScrollMode={setScrollMode} scrollY={scrollY}>
+      <SectionDiv id="section-2" setActiveSectionId={setActiveSectionId}>
             <SectionTitle colorClass="text-gray-50">
               About
             </SectionTitle>
@@ -102,11 +97,8 @@ function App() {
                 }
               </ul>
             </SectionContent>
-          </SectionDiv>
-        </Slide>
-
-        <Slide>
-          <SectionDiv setScrollMode={setScrollMode} scrollY={scrollY}>
+      </SectionDiv>
+      <SectionDiv id="section-3" setActiveSectionId={setActiveSectionId}>
             <SectionTitle colorClass="text-gray-50">
               Experience
             </SectionTitle>
@@ -189,12 +181,8 @@ function App() {
                 </StyledCard>
               </div>
             </SectionContent>
-          </SectionDiv>
-        </Slide>
-
-
-        <Slide>
-          <SectionDiv setScrollMode={setScrollMode} scrollY={scrollY}>
+      </SectionDiv>
+      <SectionDiv id="section-4" setActiveSectionId={setActiveSectionId}>
             <SectionTitle colorClass="text-gray-50">
               About
             </SectionTitle>
@@ -214,9 +202,7 @@ function App() {
                 }
               </ul>
             </SectionContent>
-          </SectionDiv>
-        </Slide>
-      </FullPage>
+      </SectionDiv>
 
 
       <div className="fixed bottom-1 right-1 w-24 h-24 md:w-36 md:h-36 xl:w-48 xl:h-48 transform duration-500 hover:-rotate-6">
