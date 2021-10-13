@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const AnimatedHeading = ({ defaultText, hoverText, colorClass, name }) => {
+export const AnimatedHeading = ({ children, colorClass }) => {
   return (
     <div
       className="animated-text"
@@ -17,7 +17,7 @@ export const AnimatedHeading = ({ defaultText, hoverText, colorClass, name }) =>
         `
         }
       >
-        {defaultText}
+        {children}
       </span>
     </div>
   )

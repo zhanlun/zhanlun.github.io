@@ -11,9 +11,15 @@ export const HelloSection = ({ id, setActiveSectionId }) => {
     `}>
       <div className="w-full sm:w-3/4 xl:w-1/2 pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20 2xl:pl-36 whitespace-nowrap">
         <div className="flex flex-col w-full">
-          <AnimatedHeading defaultText="Hello." colorClass="text-gray-50" />
-          <AnimatedHeading defaultText="I'm" colorClass="text-epicyellow-normal" />
-          <AnimatedHeading defaultText="Ng Zhan Lun" colorClass="text-epicyellow-normal" name />
+          <AnimatedHeading colorClass="text-gray-50" >
+            Hello.
+          </AnimatedHeading>
+          <AnimatedHeading colorClass="text-epicyellow-normal" >
+            I'm
+          </AnimatedHeading>
+          <AnimatedHeading colorClass="text-epicyellow-normal" >
+            Ng Zhan Lun
+          </AnimatedHeading>
         </div>
       </div>
     </HigherSectionDiv>
