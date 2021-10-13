@@ -1,13 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-function checkScrollDirectionIsUp(event) {
-  if (event.wheelDelta) {
-    return event.wheelDelta > 0;
-  }
-  return event.deltaY < 0;
-}
-
-const isElementXPercentInViewport = function (el, percentVisible, id) {
+const isElementXPercentInViewport = function (el) {
   let
     rect = el.getBoundingClientRect(),
     windowHeight = (window.innerHeight || document.documentElement.clientHeight);
@@ -40,8 +33,12 @@ export const HigherSectionDiv = (props) => {
   }, [y]);
 
   const handleScroll = (e) => {
-    if (isElementXPercentInViewport(refObj.current, 50, id)) {
+    if (isElementXPercentInViewport(refObj.current)) {
       setActiveSectionId(id)
+      setTimeout(() => {
+        // check again after scrolling by link, if is actually this page, update history
+        isElementXPercentInViewport(refObj.current) && window.history.replaceState(undefined, undefined, '#' + id)
+      }, 500);
     }
   }
 
