@@ -166,7 +166,7 @@ function App() {
             {
               projectsData.map((project, idx) => (
                 <ProjectCard key={idx}>
-                  <img src={project.img} />
+                  <img src={project.img} className="transform duration-300 hover:rotate-2" />
                   <div className="p-4">
                     <div className="mb-2">
                       <CardTitle>{project.title}</CardTitle>
