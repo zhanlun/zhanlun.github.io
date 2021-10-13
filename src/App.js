@@ -10,8 +10,11 @@ import { StyledCard } from "./components/Card/StyledCard";
 import { CardSubtitle } from "./components/Card/CardSubtitle";
 import { HigherSectionDiv } from "./components/HigherSectionDiv";
 import { useMediaQuery } from 'react-responsive'
-import experience, { experienceData } from "./data/experience";
+import { experienceData } from "./data/experience";
+import { projectsData } from "./data/projects";
 import { CardTitle } from "./components/Card/CardTitle";
+import { ProjectCard } from "./components/Card/ProjectCard";
+import { ExternalLinkIcon } from '@heroicons/react/solid'
 
 const linkNameList = ['Home', 'About', 'Experience', 'Projects', 'Contact']
 const skillList = [
@@ -161,20 +164,54 @@ function App() {
           Projects
         </SectionTitle>
         <SectionContent>
-          <StyledParagraph>Hi, I'm Ng Zhan Lun. I'm a computer science graduate from Universiti Teknologi Malaysia.</StyledParagraph>
-          <StyledParagraph>My current career focus is software development, especially in web development. Currently I love using React.js and its ecosystem to develop various web applications.</StyledParagraph>
-          <StyledParagraph>Some of my skills are as follows:</StyledParagraph>
-          <ul className="flex flex-wrap select-none gap-4 mt-4">
+          <div className="flex flex-wrap gap-4 items-start">
             {
-              skillList.map(skill => (
-                <li key={skill}>
-                  <SkillBadge colorClass="bg-epicyellow-normal hover:bg-epicyellow-light text-black">
-                    {skill}
-                  </SkillBadge>
-                </li>
+              projectsData.map((project, idx) => (
+                <ProjectCard key={idx}>
+                  <img src={project.img} />
+                  <div className="p-4">
+                    <div className="mb-2">
+                      <CardTitle>{project.title}</CardTitle>
+                      <p className="text-gray-100 tracking-tight py-2 mt-2">
+                        {project.subtitle}
+                      </p>
+                    </div>
+                    <div className="my-2">
+                      <ul className="pl-4 my-2 tracking-normal">
+                        {
+                          project.linkListItems.map(item => (
+                            <li key={item} className="list-none my-3">
+                              <a href={item.url}
+                                target="_blank"
+                                className="flex w-max hover:text-epicyellow-normal duration-200"
+                              >
+                                <ExternalLinkIcon className="w-4 h-4 mt-1 mr-1" />
+                                {item.text}
+                              </a>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                    <div className="mt-4 border-t-2 border-epicyellow-normal">
+                      <CardSubtitle>{project.bottomSubtitle}</CardSubtitle>
+                      <ul className="flex flex-wrap gap-4 pt-2">
+                        {
+                          project.bottomListItems.map(item => (
+                            <li key={item}>
+                              <SkillBadge colorClass="bg-epicyellow-normal hover:bg-epicyellow-light text-black text-sm">
+                                {item}
+                              </SkillBadge>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                  </div>
+                </ProjectCard>
               ))
             }
-          </ul>
+          </div>
         </SectionContent>
       </SectionDiv>
 
