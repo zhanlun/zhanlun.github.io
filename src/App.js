@@ -35,11 +35,9 @@ function CustomControls({ activeSectionId, menuShow }) {
     ${menuShow ? 'translate-y-0' : 'translate-y-full'}`
     }>
       <nav className="px-4 py-2 h-full rounded-l-lg bg-black bg-opacity-80 border-r-2 border-epicyellow-normal">
-        <ul className="text-xl text-right ">
+        <ul className="text-base sm:text-lg lg:text-xl text-right ">
           {
             linkNameList.map((linkName, idx) => (
-              // TODO
-              // adjust the link background color
               <li
                 key={linkName}
                 className={`link-name-list-item
@@ -87,11 +85,11 @@ function App() {
         id="section-1" className={`h-screen flex items-center section-div
         border-b-2 border-epicyellow-normal
         `}>
-        <div className="w-full sm:w-3/4 xl:w-1/2 ">
+        <div className="w-full sm:w-3/4 xl:w-1/2 pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20 2xl:pl-36 whitespace-nowrap">
           <div className="flex flex-col w-full">
             <AnimatedHeading defaultText="Hello." colorClass="text-gray-50" />
             <AnimatedHeading defaultText="I'm" colorClass="text-epicyellow-normal" />
-            <AnimatedHeading defaultText="as dfgq qwae" colorClass="text-epicyellow-normal" name />
+            <AnimatedHeading defaultText="Ng Zhan Lun" colorClass="text-epicyellow-normal" name />
           </div>
         </div>
       </HigherSectionDiv>
@@ -177,7 +175,7 @@ function App() {
                       </p>
                     </div>
                     <div className="my-2">
-                      <ul className="pl-4 my-2 tracking-normal">
+                      <ul className="pl-4 my-2 tracking-tight">
                         {
                           project.linkListItems.map(item => (
                             <li key={item} className="list-none my-3">
