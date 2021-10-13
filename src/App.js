@@ -15,6 +15,7 @@ import { projectsData } from "./data/projects";
 import { CardTitle } from "./components/Card/CardTitle";
 import { ProjectCard } from "./components/Card/ProjectCard";
 import { ExternalLinkIcon } from '@heroicons/react/solid'
+import Masonry from 'react-masonry-css'
 
 const linkNameList = ['Home', 'About', 'Experience', 'Projects', 'Contact']
 const skillList = [
@@ -73,6 +74,17 @@ function App() {
   useEffect(() => {
     setMenuShow(!isMobile)
   }, [isMobile])
+
+  // sort by list items length, to show shorter card first
+  projectsData.sort((a, b) => {
+    return (
+      a.bottomListItems.length > b.bottomListItems.length ?
+        1 :
+        a.bottomListItems.length < b.bottomListItems.length ?
+          -1 :
+          0
+    )
+  })
 
   return (
     <div
@@ -162,7 +174,16 @@ function App() {
           Projects
         </SectionTitle>
         <SectionContent>
-          <div className="flex flex-wrap gap-4 items-start">
+          {/* <div className="flex flex-wrap gap-4 items-start"> */}
+
+          <Masonry
+            breakpointCols={{
+              default: 2,
+              1200: 1,
+            }}
+            className="flex -ml-7 w-auto"
+            columnClassName="my-masonry-grid_column">
+
             {
               projectsData.map((project, idx) => (
                 <ProjectCard key={idx}>
@@ -209,7 +230,8 @@ function App() {
                 </ProjectCard>
               ))
             }
-          </div>
+          </Masonry>
+          {/* </div> */}
         </SectionContent>
       </SectionDiv>
 
