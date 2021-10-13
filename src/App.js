@@ -117,11 +117,11 @@ function App() {
           Experience
         </SectionTitle>
         <SectionContent>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 items-start">
             <StyledCard>
               <div className="mb-2">
                 <h3 className="text-gray-50 border-b-2 border-epicyellow-normal font-bold text-2xl tracking-tight pb-2">Internship</h3>
-                <CardSubtitle>Huawei Technologies (Malaysia)</CardSubtitle>
+                <CardSubtitle>Huawei Technologies (Malaysia) • 2020-2021</CardSubtitle>
               </div>
               <div className="my-2">
                 <ul className="pl-4 my-2 tracking-wide">
@@ -145,44 +145,19 @@ function App() {
             </StyledCard>
             <StyledCard>
               <div className="mb-2">
-                <h3 className="text-gray-50 border-b-2 border-epicyellow-normal font-bold text-2xl tracking-tight pb-2">Internship</h3>
-                <CardSubtitle>Huawei Technologies (Malaysia)</CardSubtitle>
+                <h3 className="text-gray-50 border-b-2 border-epicyellow-normal font-bold text-2xl tracking-tight pb-2">Competition</h3>
+                <CardSubtitle>E-genting Programming Competition • 2019 • Merit Award</CardSubtitle>
               </div>
               <div className="my-2">
                 <ul className="pl-4 my-2 tracking-wide">
-                  <li className="list-disc">Involved in development & maintenance of internal systems</li>
+                  <li className="list-disc">Written data processing script to output stock expiry report based on provided database schema</li>
                 </ul>
               </div>
               <div className="mt-4 border-t-2 border-epicyellow-normal">
                 <CardSubtitle>Technologies Used</CardSubtitle>
                 <ul className="flex flex-wrap gap-4 pt-2">
                   {
-                    ['JavaScript', 'HTML & CSS', 'SQL', 'Huawei GDE'].map(skill => (
-                      <li key={skill}>
-                        <SkillBadge colorClass="bg-epicyellow-normal hover:bg-epicyellow-light text-black text-sm">
-                          {skill}
-                        </SkillBadge>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </StyledCard>
-            <StyledCard>
-              <div className="mb-2">
-                <h3 className="text-gray-50 border-b-2 border-epicyellow-normal font-bold text-2xl tracking-tight pb-2">Internship</h3>
-                <CardSubtitle>Huawei Technologies (Malaysia)</CardSubtitle>
-              </div>
-              <div className="my-2">
-                <ul className="pl-4 my-2 tracking-wide">
-                  <li className="list-disc">Involved in development & maintenance of internal systems</li>
-                </ul>
-              </div>
-              <div className="mt-4 border-t-2 border-epicyellow-normal">
-                <CardSubtitle>Technologies Used</CardSubtitle>
-                <ul className="flex flex-wrap select-none gap-4 pt-2">
-                  {
-                    ['JavaScript', 'HTML & CSS', 'SQL', 'Huawei GDE'].map(skill => (
+                    ['Python', 'SQL'].map(skill => (
                       <li key={skill}>
                         <SkillBadge colorClass="bg-epicyellow-normal hover:bg-epicyellow-light text-black text-sm">
                           {skill}
@@ -198,7 +173,7 @@ function App() {
       </SectionDiv>
       <SectionDiv id="section-4" setActiveSectionId={setActiveSectionId}>
         <SectionTitle colorClass="text-gray-50">
-          About
+          Projects
         </SectionTitle>
         <SectionContent>
           <StyledParagraph>Hi, I'm Ng Zhan Lun. I'm a computer science graduate from Universiti Teknologi Malaysia.</StyledParagraph>
@@ -219,7 +194,7 @@ function App() {
       </SectionDiv>
 
 
-      <div className="z-40 fixed bottom-1 right-1 w-24 h-24 md:w-36 md:h-36 xl:w-48 xl:h-48 transform duration-500 hover:-rotate-6">
+      <div className="z-40 fixed bottom-1 right-1 w-16 h-16 sm:w-24 sm:h-24 lg:w-36 lg:h-36 xl:w-48 xl:h-48 transform duration-500 hover:-rotate-6">
         <MyCat
           backgroundColor="#e8ea26"
           onClick={() => {
