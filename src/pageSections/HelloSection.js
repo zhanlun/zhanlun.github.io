@@ -1,6 +1,6 @@
 import React from 'react'
-import { AnimatedHeading } from '../AnimatedHeading'
-import { HigherSectionDiv } from '../components/HigherSectionDiv'
+import { AnimatedHeading } from '../components/AnimatedHeading'
+import { HigherSectionDiv } from '../components/Section/HigherSectionDiv'
 
 export const HelloSection = ({ id, setActiveSectionId }) => {
   return (

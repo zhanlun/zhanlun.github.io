@@ -4,11 +4,11 @@ import Masonry from 'react-masonry-css'
 import { CardSubtitle } from '../components/Card/CardSubtitle'
 import { CardTitle } from '../components/Card/CardTitle'
 import { ProjectCard } from '../components/Card/ProjectCard'
-import { SectionContent } from '../components/SectionContent'
-import { SectionDiv } from '../components/SectionDiv'
+import { SectionContent } from '../components/Section/SectionContent'
+import { SectionDiv } from '../components/Section/SectionDiv'
 import { projectsData } from '../data/projects'
-import { SectionTitle } from '../SectionTitle'
-import { SkillBadge } from '../SkillBadge'
+import { SectionTitle } from '../components/Section/SectionTitle'
+import { SkillBadge } from '../components/SkillBadge'
 
 export const ProjectsSection = ({ id, setActiveSectionId }) => {
   const projectList = projectsData.map((project, idx) => (

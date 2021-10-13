@@ -3,11 +3,11 @@ import Masonry from 'react-masonry-css'
 import { CardSubtitle } from '../components/Card/CardSubtitle'
 import { CardTitle } from '../components/Card/CardTitle'
 import { StyledCard } from '../components/Card/StyledCard'
-import { SectionContent } from '../components/SectionContent'
-import { SectionDiv } from '../components/SectionDiv'
+import { SectionContent } from '../components/Section/SectionContent'
+import { SectionDiv } from '../components/Section/SectionDiv'
 import { experienceData } from '../data/experience'
-import { SectionTitle } from '../SectionTitle'
-import { SkillBadge } from '../SkillBadge'
+import { SectionTitle } from '../components/Section/SectionTitle'
+import { SkillBadge } from '../components/SkillBadge'
 
 export const ExperienceSection = ({ id, setActiveSectionId }) => {
 

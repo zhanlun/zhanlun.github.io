@@ -1,9 +1,9 @@
 import React from 'react'
-import { SectionContent } from '../components/SectionContent'
-import { SectionDiv } from '../components/SectionDiv'
-import { SectionTitle } from '../SectionTitle'
-import { SkillBadge } from '../SkillBadge'
-import { StyledParagraph } from '../StyledParagraph'
+import { SectionContent } from '../components/Section/SectionContent'
+import { SectionDiv } from '../components/Section/SectionDiv'
+import { SectionTitle } from '../components/Section/SectionTitle'
+import { SkillBadge } from '../components/SkillBadge'
+import { StyledParagraph } from '../components/StyledParagraph'
 import { skillsData } from '../data/skills'
 
 export const AboutSection = ({ id, setActiveSectionId }) => {
