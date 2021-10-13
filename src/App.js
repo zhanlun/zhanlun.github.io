@@ -10,6 +10,8 @@ import { StyledCard } from "./components/Card/StyledCard";
 import { CardSubtitle } from "./components/Card/CardSubtitle";
 import { HigherSectionDiv } from "./components/HigherSectionDiv";
 import { useMediaQuery } from 'react-responsive'
+import experience, { experienceData } from "./data/experience";
+import { CardTitle } from "./components/Card/CardTitle";
 
 const linkNameList = ['Home', 'About', 'Experience', 'Projects', 'Contact']
 const skillList = [
@@ -118,56 +120,39 @@ function App() {
         </SectionTitle>
         <SectionContent>
           <div className="flex flex-wrap gap-4 items-start">
-            <StyledCard>
-              <div className="mb-2">
-                <h3 className="text-gray-50 border-b-2 border-epicyellow-normal font-bold text-2xl tracking-tight pb-2">Internship</h3>
-                <CardSubtitle>Huawei Technologies (Malaysia) • 2020-2021</CardSubtitle>
-              </div>
-              <div className="my-2">
-                <ul className="pl-4 my-2 tracking-wide">
-                  <li className="list-disc">Involved in development & maintenance of internal systems</li>
-                </ul>
-              </div>
-              <div className="mt-4 border-t-2 border-epicyellow-normal">
-                <CardSubtitle>Technologies Used</CardSubtitle>
-                <ul className="flex flex-wrap gap-4 pt-2">
-                  {
-                    ['JavaScript', 'HTML & CSS', 'SQL', 'Huawei GDE'].map(skill => (
-                      <li key={skill}>
-                        <SkillBadge colorClass="bg-epicyellow-normal hover:bg-epicyellow-light text-black text-sm">
-                          {skill}
-                        </SkillBadge>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </StyledCard>
-            <StyledCard>
-              <div className="mb-2">
-                <h3 className="text-gray-50 border-b-2 border-epicyellow-normal font-bold text-2xl tracking-tight pb-2">Competition</h3>
-                <CardSubtitle>E-genting Programming Competition • 2019 • Merit Award</CardSubtitle>
-              </div>
-              <div className="my-2">
-                <ul className="pl-4 my-2 tracking-wide">
-                  <li className="list-disc">Written data processing script to output stock expiry report based on provided database schema</li>
-                </ul>
-              </div>
-              <div className="mt-4 border-t-2 border-epicyellow-normal">
-                <CardSubtitle>Technologies Used</CardSubtitle>
-                <ul className="flex flex-wrap gap-4 pt-2">
-                  {
-                    ['Python', 'SQL'].map(skill => (
-                      <li key={skill}>
-                        <SkillBadge colorClass="bg-epicyellow-normal hover:bg-epicyellow-light text-black text-sm">
-                          {skill}
-                        </SkillBadge>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </StyledCard>
+            {
+              experienceData.map((experience, idx) => (
+                <StyledCard key={idx}>
+                  <div className="mb-2">
+                    <CardTitle>{experience.title}</CardTitle>
+                    <CardSubtitle>{experience.subtitle}</CardSubtitle>
+                  </div>
+                  <div className="my-2">
+                    <ul className="pl-4 my-2 tracking-wide">
+                      {
+                        experience.listItems.map(item => (
+                          <li key={item} className="list-disc">{item}</li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                  <div className="mt-4 border-t-2 border-epicyellow-normal">
+                    <CardSubtitle>{experience.bottomSubtitle}</CardSubtitle>
+                    <ul className="flex flex-wrap gap-4 pt-2">
+                      {
+                        experience.bottomListItems.map(item => (
+                          <li key={item}>
+                            <SkillBadge colorClass="bg-epicyellow-normal hover:bg-epicyellow-light text-black text-sm">
+                              {item}
+                            </SkillBadge>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                </StyledCard>
+              ))
+            }
           </div>
         </SectionContent>
       </SectionDiv>
