@@ -2,8 +2,8 @@ import React from 'react'
 
 export const CardSubtitle = ({ children }) => {
   return (
-    <h4 className={`text-gray-100 italic font-semibold tracking-tight py-2
-    text-base sm:text-lg
+    <h4 className={`text-gray-100 font-semibold tracking-wide py-2 mt-2
+    text-base
     `}>
       {children}
     </h4>
