@@ -1,7 +1,7 @@
 import MyCat from "./MyCat";
 import { AnimatedHeading } from "./AnimatedHeading";
 import { SectionTitle } from "./SectionTitle";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SkillBadge } from "./SkillBadge";
 import { StyledParagraph } from "./StyledParagraph";
 import { SectionDiv } from "./components/SectionDiv";
@@ -9,6 +9,7 @@ import { SectionContent } from "./components/SectionContent";
 import { StyledCard } from "./components/Card/StyledCard";
 import { CardSubtitle } from "./components/Card/CardSubtitle";
 import { HigherSectionDiv } from "./components/HigherSectionDiv";
+import { useMediaQuery } from 'react-responsive'
 
 const linkNameList = ['Home', 'About', 'Experience', 'Projects', 'Contact']
 const skillList = [
@@ -25,10 +26,10 @@ const skillList = [
 function CustomControls({ activeSectionId, menuShow }) {
 
   return (
-    <div className={`fixed right-12 top-20 pt-2 transform duration-500 h-full 
+    <div className={`fixed right-12 z-20 top-20 pt-2 transform duration-500 h-full
     ${menuShow ? 'translate-y-0' : 'translate-y-full'}`
     }>
-      <nav className="px-4 py-2 h-full border-r-2 border-epicyellow-normal">
+      <nav className="px-4 py-2 h-full rounded-l-lg bg-black bg-opacity-80 border-r-2 border-epicyellow-normal">
         <ul className="text-xl text-right ">
           {
             linkNameList.map((linkName, idx) => (
@@ -63,7 +64,12 @@ function CustomControls({ activeSectionId, menuShow }) {
 
 function App() {
   const [activeSectionId, setActiveSectionId] = useState('section-1')
-  const [menuShow, setMenuShow] = useState(true)
+  const isMobile = useMediaQuery({ query: '(max-width: 720px)' })
+  const [menuShow, setMenuShow] = useState(false)
+
+  useEffect(() => {
+    setMenuShow(!isMobile)
+  }, [isMobile])
 
   return (
     <div
@@ -71,9 +77,6 @@ function App() {
     >
       <CustomControls activeSectionId={activeSectionId} menuShow={menuShow} />
 
-      {/* TODO
-        PUT LOGIC INTO SECTION-1
-      */}
       <HigherSectionDiv
         setActiveSectionId={setActiveSectionId}
         id="section-1" className={`h-screen flex items-center section-div
@@ -96,7 +99,7 @@ function App() {
           <StyledParagraph>Hi, I'm Ng Zhan Lun. I'm a computer science graduate from Universiti Teknologi Malaysia.</StyledParagraph>
           <StyledParagraph>My current career focus is software development, especially in web development. Currently I love using React.js and its ecosystem to develop various web applications.</StyledParagraph>
           <StyledParagraph>Some of my skills are as follows:</StyledParagraph>
-          <ul className="flex flex-wrap select-none gap-4 mt-4">
+          <ul className="flex flex-wrap gap-4 mt-4">
             {
               skillList.map(skill => (
                 <li key={skill}>
@@ -127,7 +130,7 @@ function App() {
               </div>
               <div className="mt-4 border-t-2 border-epicyellow-normal">
                 <CardSubtitle>Technologies Used</CardSubtitle>
-                <ul className="flex flex-wrap select-none gap-4 pt-2">
+                <ul className="flex flex-wrap gap-4 pt-2">
                   {
                     ['JavaScript', 'HTML & CSS', 'SQL', 'Huawei GDE'].map(skill => (
                       <li key={skill}>
@@ -152,7 +155,7 @@ function App() {
               </div>
               <div className="mt-4 border-t-2 border-epicyellow-normal">
                 <CardSubtitle>Technologies Used</CardSubtitle>
-                <ul className="flex flex-wrap select-none gap-4 pt-2">
+                <ul className="flex flex-wrap gap-4 pt-2">
                   {
                     ['JavaScript', 'HTML & CSS', 'SQL', 'Huawei GDE'].map(skill => (
                       <li key={skill}>
@@ -216,7 +219,7 @@ function App() {
       </SectionDiv>
 
 
-      <div className="fixed bottom-1 right-1 w-24 h-24 md:w-36 md:h-36 xl:w-48 xl:h-48 transform duration-500 hover:-rotate-6">
+      <div className="z-40 fixed bottom-1 right-1 w-24 h-24 md:w-36 md:h-36 xl:w-48 xl:h-48 transform duration-500 hover:-rotate-6">
         <MyCat
           backgroundColor="#e8ea26"
           onClick={() => {
