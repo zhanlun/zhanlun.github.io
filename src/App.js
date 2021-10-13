@@ -75,17 +75,6 @@ function App() {
     setMenuShow(!isMobile)
   }, [isMobile])
 
-  // sort by list items length, to show shorter card first
-  projectsData.sort((a, b) => {
-    return (
-      a.bottomListItems.length > b.bottomListItems.length ?
-        1 :
-        a.bottomListItems.length < b.bottomListItems.length ?
-          -1 :
-          0
-    )
-  })
-
   return (
     <div
       className="relative scroll-container"
@@ -132,7 +121,13 @@ function App() {
           Experience
         </SectionTitle>
         <SectionContent>
-          <div className="flex flex-wrap gap-4 items-start">
+          <Masonry
+            breakpointCols={{
+              default: 2,
+              1200: 1,
+            }}
+            className="flex -ml-7 w-auto"
+            columnClassName="my-masonry-grid_column">
             {
               experienceData.map((experience, idx) => (
                 <StyledCard key={idx}>
@@ -166,7 +161,7 @@ function App() {
                 </StyledCard>
               ))
             }
-          </div>
+          </Masonry>
         </SectionContent>
       </SectionDiv>
       <SectionDiv id="section-4" setActiveSectionId={setActiveSectionId}>
@@ -187,7 +182,7 @@ function App() {
             {
               projectsData.map((project, idx) => (
                 <ProjectCard key={idx}>
-                  <img src={project.img} className="transform duration-300 hover:rotate-2" />
+                  <img src={project.img} className="border-epicyellow-normal transform duration-300 hover:rotate-2 h-44 w-full object-cover" />
                   <div className="p-4">
                     <div className="mb-2">
                       <CardTitle>{project.title}</CardTitle>
@@ -196,7 +191,7 @@ function App() {
                       </p>
                     </div>
                     <div className="my-2">
-                      <ul className="pl-4 my-2 tracking-tight">
+                      <ul className="flex flex-wrap gap-x-6 pl-4 my-2 tracking-tight">
                         {
                           project.linkListItems.map(item => (
                             <li key={item} className="list-none my-3">
