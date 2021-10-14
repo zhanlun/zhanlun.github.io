@@ -60,3 +60,8 @@ html {
   /* gutter size */
   background-clip: padding-box;
 }
+
+.navbar {
+  right: 5%;
+  top: 10%;
+}

@@ -4,11 +4,13 @@ import { navbarLinksData } from '../data/navbarLinks'
 export const Navbar = ({ activeSectionId, menuShow }) => {
 
   return (
-    <div className={`fixed right-12 z-20 top-20 pt-2 transform duration-500 h-full
+    <div className={`fixed z-20
+    navbar
+    pt-2 transform duration-500 h-full
     ${menuShow ? 'translate-y-0' : 'translate-y-full'}`
     }>
       <nav className="px-4 py-2 h-full rounded-l-lg bg-black bg-opacity-80 border-r-2 border-epicyellow-normal">
-        <ul className="text-base sm:text-lg lg:text-xl text-right ">
+        <ul className="text-xs sm:text-sm lg:text-xl text-right">
           {
             navbarLinksData.map((link, idx) => (
               <li
