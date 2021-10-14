@@ -14,7 +14,7 @@ export const ContactSection = ({ id, setActiveSectionId }) => {
       </SectionTitle>
       <SectionContent>
         <StyledParagraph>
-          <span className="flex">
+          <span className="flex flex-wrap">
             <MailIcon className="w-6 h-6 mt-0.5 mr-2" />
             Email —&nbsp;
             <a href="mailto:zhanlun.ng@gmail.com"
