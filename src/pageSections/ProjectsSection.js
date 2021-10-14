@@ -28,6 +28,7 @@ export const ProjectsSection = ({ id, setActiveSectionId }) => {
                 <li key={idx} className="list-none my-3 border px-2 py-1 rounded border-epicyellow-normal hover:bg-black">
                   <a href={item.url}
                     target="_blank"
+                    rel="noreferrer"
                     className="flex w-max text-xs sm:text-base font-semibold hover:text-epicyellow-normal duration-200"
                   >
                     <ExternalLinkIcon className="w-4 h-4 mt-0 sm:mt-1 mr-1" />

@@ -27,6 +27,7 @@ export const ContactSection = ({ id, setActiveSectionId }) => {
           <span className="flex">
             <BsGithub className="w-6 h-6 mt-0.5 mr-2" />
             <a href="https://github.com/zhanlun" target="_blank"
+              rel="noreferrer"
               className="hover:text-epicyellow-normal duration-200">
               Github
             </a>

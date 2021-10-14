@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { HigherSectionDiv } from './HigherSectionDiv';
 
 export const SectionDiv = (props) => {
