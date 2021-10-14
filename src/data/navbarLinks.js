@@ -2,6 +2,7 @@ import { HelloSection } from "../pageSections/HelloSection";
 import { AboutSection } from "../pageSections/AboutSection";
 import { ExperienceSection } from "../pageSections/ExperienceSection";
 import { ProjectsSection } from "../pageSections/ProjectsSection";
+import { ContactSection } from "../pageSections/ContactSection";
 
 export const navbarLinksData = [
   {
@@ -27,6 +28,6 @@ export const navbarLinksData = [
   {
     id: 'contact',
     title: 'Contact',
-    component: AboutSection,
+    component: ContactSection,
   },
 ]
