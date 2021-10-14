@@ -1,62 +1,54 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-class MyCat extends React.Component {
+export const MyCat = (props) => {
+  const [backgroundColor, setBackgroundColor] = useState(props.backgroundColor || 'white')
+  const [leftEyeX, setLeftEyeX] = useState(850)
+  const [leftEyeY, setLeftEyeY] = useState(505)
+  const [smallEyeX, setSmallEyeX] = useState(840)
+  const [smallEyeY, setSmallEyeY] = useState(500)
+  const [mouseX, setMouseX] = useState(0)
+  const [mouseY, setMouseY] = useState(0)
+  const catRef = useRef(null)
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            backgroundColor: props.backgroundColor || 'white',
-            leftEyeX: 850,
-            leftEyeY: 505,
-            smallEyeX: 840,
-            smallEyeY: 500,
-            mouseX: 0,
-            mouseY: 0,
-        }
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMouseX(e.clientX)
+      setMouseY(e.clientY)
     }
+    document.addEventListener('mousemove', handleMouseMove);
 
-    componentDidMount() {
-        document.addEventListener('mousemove', (e) => {
-            this.setState({ mouseX: e.clientX, mouseY: e.clientY });
-        });
+    const catEyesTimer = setInterval(() => {
+      const myRadius = 15;
+      let rect = catRef.current.getBoundingClientRect();
+      const triangleY = mouseY - (rect.top + (rect.bottom - rect.top) * 0.43)
+      const triangleX = mouseX - (rect.left + (rect.right - rect.left) * 0.65)
+      let newRadian = Math.atan(triangleY / triangleX)
 
-        setInterval(() => {
-            const myRadius = 15;
-            const [mouseX, mouseY] = [this.state.mouseX, this.state.mouseY]
+      if (triangleX < 0) {
+        newRadian = (newRadian + Math.PI) % (Math.PI * 2)
+      }
+      let newXOnBigCircle = Math.cos(newRadian) * (28 - myRadius - myRadius / 6)
+      let newYOnBigCircle = Math.sin(newRadian) * (28 - myRadius - myRadius / 6)
 
-            let rect = document.querySelector('#mycat-svg').getBoundingClientRect();
-            const triangleY = mouseY - (rect.top + (rect.bottom - rect.top) * 0.43)
-            const triangleX = mouseX - (rect.left + (rect.right - rect.left) * 0.65)
-            let newRadian = Math.atan(triangleY / triangleX)
+      setSmallEyeX(newXOnBigCircle + leftEyeX)
+      setSmallEyeY(newYOnBigCircle + leftEyeY)
+    }, 10);
 
-            if (triangleX < 0) {
-                newRadian = (newRadian + Math.PI) % (Math.PI * 2)
-            }
-            let newXOnBigCircle = Math.cos(newRadian) * (28 - myRadius - myRadius / 6)
-            let newYOnBigCircle = Math.sin(newRadian) * (28 - myRadius - myRadius / 6)
-
-            this.setState({
-                smallEyeX: newXOnBigCircle + this.state.leftEyeX,
-                smallEyeY: newYOnBigCircle + this.state.leftEyeY,
-                newRadian: newRadian,
-                rect: rect,
-            });
-        }, 10);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      clearInterval(catEyesTimer)
     }
+  })
 
-    render() {
-        return (
-            <svg viewBox="0 0 1210.000000 1210.000000"
-                {...this.props}
-                preserveAspectRatio="xMidYMid meet" id="mycat-svg">
-
-                {/* <rect width="100%" height="100%" fill={this.state.backgroundColor}/> */}
-                <circle cx="605" cy="605" r="600" stroke={this.state.backgroundColor} strokeWidth="1" fill={this.state.backgroundColor} />
-
-
-                <g transform="translate(-86,1210.000000) scale(0.100000,-0.100000)"
-                    fill="#000000" stroke="none">
-                    <path d="M6655 10069 c-980 -78 -1860 -490 -2540 -1191 -861 -885 -1272 -2109
+  return (
+    <svg viewBox="0 0 1210.000000 1210.000000"
+      {...props}
+      ref={catRef}
+      preserveAspectRatio="xMidYMid meet">
+      <circle cx="605" cy="605" r="600" stroke={backgroundColor} strokeWidth="1" fill={backgroundColor} />
+      <g transform="translate(-86,1210.000000) scale(0.100000,-0.100000)"
+        fill="#000000" stroke="none">
+        <path d="M6655 10069 c-980 -78 -1860 -490 -2540 -1191 -861 -885 -1272 -2109
             -1124 -3343 81 -679 324 -1317 713 -1870 245 -349 590 -699 931 -946 1016
             -736 2315 -943 3500 -558 l160 52 160 -22 c285 -39 335 -42 716 -48 485 -7
             790 14 1124 77 306 58 545 159 604 254 30 47 28 117 -3 163 -88 129 -408 237
@@ -81,23 +73,22 @@ class MyCat extends React.Component {
             m-597 -519 c20 -20 29 -39 29 -61 0 -22 -9 -41 -29 -61 -20 -20 -39 -29 -61
             -29 -22 0 -41 9 -61 29 -20 20 -29 39 -29 61 0 22 9 41 29 61 20 20 39 29 61
             29 22 0 41 -9 61 -29z"/>
-                    <path d="M8374 7260 c-41 -13 -91 -70 -99 -114 -9 -48 10 -99 50 -135 103 -90
+        <path d="M8374 7260 c-41 -13 -91 -70 -99 -114 -9 -48 10 -99 50 -135 103 -90
             270 -23 270 109 0 51 -19 87 -66 122 -29 22 -111 31 -155 18z"/>
-                    <path d="M9334 7260 c-41 -13 -91 -70 -99 -114 -9 -48 10 -99 50 -135 103 -90
+        <path d="M9334 7260 c-41 -13 -91 -70 -99 -114 -9 -48 10 -99 50 -135 103 -90
             270 -23 270 109 0 51 -19 87 -66 122 -29 22 -111 31 -155 18z"/>
-                </g>
+      </g>
 
-                <circle cx={this.state.leftEyeX - 86} cy={this.state.leftEyeY} r="28" stroke="white" strokeWidth="3.2" fill="white" />
-                <circle cx="860" cy="505" r="28" stroke="white" strokeWidth="3.2" fill="white" />
+      <circle cx={leftEyeX - 86} cy={leftEyeY} r="28" stroke="white" strokeWidth="3.2" fill="white" />
+      <circle cx="860" cy="505" r="28" stroke="white" strokeWidth="3.2" fill="white" />
 
-                <circle cx={this.state.smallEyeX - 86} cy={this.state.smallEyeY} r="15" stroke="black" strokeWidth="3.2" fill="black" />
-                <circle cx={this.state.smallEyeX + 10} cy={this.state.smallEyeY} r="15" stroke="black" strokeWidth="3.2" fill="black" />
+      <circle cx={smallEyeX - 86} cy={smallEyeY} r="15" stroke="black" strokeWidth="3.2" fill="black" />
+      <circle cx={smallEyeX + 10} cy={smallEyeY} r="15" stroke="black" strokeWidth="3.2" fill="black" />
 
-                <circle cx="808" cy="540" r="8" stroke="white" strokeWidth="3.2" fill="white" />
+      <circle cx="808" cy="540" r="8" stroke="white" strokeWidth="3.2" fill="white" />
 
-            </svg>
-        )
-    }
+    </svg>
+  )
 }
 
 export default MyCat;
