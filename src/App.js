@@ -21,7 +21,7 @@ function App() {
     <div
       className="relative scroll-container"
     >
-      <Navbar activeSectionId={activeSectionId} menuShow={menuShow} />
+      <Navbar activeSectionId={activeSectionId} menuShow={menuShow} setMenuShow={setMenuShow} isMobile={isMobile} />
 
       {
         navbarLinksData.map((link, idx) => (
