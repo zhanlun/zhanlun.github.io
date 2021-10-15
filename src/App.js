@@ -13,6 +13,10 @@ function App() {
     setMenuShow(!isMobile)
   }, [isMobile])
 
+  useEffect(() => {
+    window.history.replaceState(undefined, undefined, '#' + activeSectionId)
+  }, [activeSectionId])
+
   return (
     <div
       className="relative scroll-container"

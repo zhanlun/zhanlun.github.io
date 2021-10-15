@@ -35,10 +35,6 @@ export const HigherSectionDiv = (props) => {
   const handleScroll = (e) => {
     if (isElementXPercentInViewport(refObj.current)) {
       setActiveSectionId(id)
-      setTimeout(() => {
-        // check again after scrolling by link, if is actually this page, update history
-        isElementXPercentInViewport(refObj.current) && window.history.replaceState(undefined, undefined, '#' + id)
-      }, 500);
     }
   }
 

@@ -7,7 +7,7 @@ export const Navbar = ({ activeSectionId, menuShow }) => {
     <div className={`fixed z-20
     navbar
     pt-2 transform duration-500 h-full
-    ${menuShow ? 'translate-y-0' : 'translate-y-full'}`
+    ${menuShow ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`
     }>
       <nav className="px-4 py-2 h-full rounded-l-lg bg-black bg-opacity-80 border-r-2 border-epicyellow-normal">
         <ul className="text-xs sm:text-sm lg:text-xl text-right">
