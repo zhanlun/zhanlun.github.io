@@ -14,7 +14,7 @@ export const AboutSection = ({ id, setActiveSectionId }) => {
       </SectionTitle>
       <SectionContent>
         <StyledParagraph>Hi, I'm Ng Zhan Lun. I'm a computer science graduate from Universiti Teknologi Malaysia.</StyledParagraph>
-        <StyledParagraph>My current career focus is software development, especially in web development. Currently I love using React.js and its ecosystem to develop various web applications.</StyledParagraph>
+        <StyledParagraph>My current career focus is software development, especially in web development. Currently, I love using various technologies such as React.js, Node.js and Java to develop various applications.</StyledParagraph>
         <StyledParagraph>Some of my skills are as follows:</StyledParagraph>
         <ul className="flex flex-wrap gap-4 mt-4">
           {
