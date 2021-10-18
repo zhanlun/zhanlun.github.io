@@ -13,7 +13,9 @@ import { SkillBadge } from '../components/SkillBadge'
 export const ProjectsSection = ({ id, setActiveSectionId }) => {
   const projectList = projectsData.map((project, idx) => (
     <ProjectCard key={idx}>
-      <img src={project.img} alt={project.title} className="border-epicyellow-normal transform duration-300 hover:rotate-2 h-44 w-full object-cover" />
+      <div className="overflow-hidden">
+        <img src={project.img} alt={project.title} className="border-epicyellow-normal transform duration-300 hover:scale-105 h-44 w-full object-cover" />
+      </div>
       <div className="p-4">
         <div className="mb-2">
           <CardTitle>{project.title}</CardTitle>
