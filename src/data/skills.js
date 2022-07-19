@@ -1,12 +1,15 @@
 module.exports = {
   skillsData: [
     'JavaScript',
+    'TypeScript',
     'React.js',
+    'Node.js',
+    'SCSS',
+    'Python',
     'SQL',
     'Java',
-    'Python',
-    'ASP.NET',
+    // 'ASP.NET',
     'HTML & CSS',
-    'PHP',
+    // 'PHP',
   ]
 }

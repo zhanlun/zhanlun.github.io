@@ -11,15 +11,27 @@ module.exports = {
         'JavaScript', 'HTML & CSS', 'SQL', 'Huawei GDE',
       ]
     },
+    // {
+    //   title: 'Competition',
+    //   subtitle: 'E-genting Programming Competition • 2019 • Merit Award',
+    //   listItems: [
+    //     'Written data processing script to output stock expiry report based on provided database schema'
+    //   ],
+    //   bottomSubtitle: 'Technologies Used',
+    //   bottomListItems: [
+    //     'Python', 'SQL',
+    //   ]
+    // },
     {
-      title: 'Competition',
-      subtitle: 'E-genting Programming Competition • 2019 • Merit Award',
+      title: 'Junior Full Stack Developer',
+      subtitle: 'Life Line Lab • 2021-Current',
       listItems: [
-        'Written data processing script to output stock expiry report based on provided database schema'
+        'Contributed to the development and maintenance of web applications, including web frontend & backend APIs',
+        'Projects include E-commerce web application and its admin portal',
       ],
       bottomSubtitle: 'Technologies Used',
       bottomListItems: [
-        'Python', 'SQL',
+        'TypeScript', 'React.js', 'Node.js', 'Recoil.js', 'ArangoDB', 'SCSS'
       ]
     },
   ]
