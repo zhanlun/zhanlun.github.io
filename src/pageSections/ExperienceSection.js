@@ -21,7 +21,7 @@ export const ExperienceSection = ({ id, setActiveSectionId }) => {
         <ul className="pl-4 my-2 tracking-wide">
           {
             experience.listItems.map(item => (
-              <li key={item} className="list-disc">{item}</li>
+              <li key={item} className="mb-3 list-disc">{item}</li>
             ))
           }
         </ul>
@@ -54,7 +54,7 @@ export const ExperienceSection = ({ id, setActiveSectionId }) => {
             default: 2,
             1200: 1,
           }}
-          className="flex -ml-7 w-auto"
+          className="flex w-auto -ml-7"
           columnClassName="my-masonry-grid_column">
           {
             experienceList

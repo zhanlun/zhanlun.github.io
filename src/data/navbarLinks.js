@@ -22,7 +22,7 @@ export const navbarLinksData = [
   },
   {
     id: 'projects',
-    title: 'Projects',
+    title: 'Personal Projects',
     component: ProjectsSection,
   },
   {

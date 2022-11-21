@@ -1,8 +1,9 @@
 module.exports = {
   skillsData: [
+    'React',
+    'React Native',
     'JavaScript',
     'TypeScript',
-    'React.js',
     'Node.js',
     'SCSS',
     'Python',

@@ -1,6 +1,18 @@
 module.exports = {
   experienceData: [
     {
+      title: 'Junior Full Stack Developer',
+      subtitle: 'Life Line Lab • 2021-Current',
+      listItems: [
+        'Contributed to the development and maintenance of web & mobile applications, with a focus on React & React Native',
+        'Projects include E-commerce website and employee health survey application',
+      ],
+      bottomSubtitle: 'Technologies Used',
+      bottomListItems: [
+        'React', 'React Native', 'SCSS', 'TypeScript', 'Redux', 'Recoil', 'Node.js', 'ArangoDB',
+      ]
+    },
+    {
       title: 'Internship',
       subtitle: 'Huawei Technologies (Malaysia) • 2020-2021',
       listItems: [
@@ -22,17 +34,5 @@ module.exports = {
     //     'Python', 'SQL',
     //   ]
     // },
-    {
-      title: 'Junior Full Stack Developer',
-      subtitle: 'Life Line Lab • 2021-Current',
-      listItems: [
-        'Contributed to the development and maintenance of web applications, including web frontend & backend APIs',
-        'Projects include E-commerce web application and its admin portal',
-      ],
-      bottomSubtitle: 'Technologies Used',
-      bottomListItems: [
-        'TypeScript', 'React.js', 'Node.js', 'Recoil.js', 'ArangoDB', 'SCSS'
-      ]
-    },
   ]
 }

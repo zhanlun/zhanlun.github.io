@@ -14,26 +14,26 @@ export const ProjectsSection = ({ id, setActiveSectionId }) => {
   const projectList = projectsData.map((project, idx) => (
     <ProjectCard key={idx}>
       <div className="overflow-hidden">
-        <img src={project.img} alt={project.title} className="border-epicyellow-normal transform duration-300 hover:scale-105 h-44 w-full object-cover" />
+        <img src={project.img} alt={project.title} className="object-cover w-full duration-300 transform border-epicyellow-normal hover:scale-105 h-44" />
       </div>
       <div className="p-4">
         <div className="mb-2">
           <CardTitle>{project.title}</CardTitle>
-          <p className="text-gray-100 tracking-tight py-2 mt-2">
+          <p className="py-2 mt-2 tracking-tight text-gray-100">
             {project.subtitle}
           </p>
         </div>
         <div className="my-2">
-          <ul className="flex flex-wrap gap-x-6 pl-4 my-2 tracking-tight">
+          <ul className="flex flex-wrap pl-4 my-2 tracking-tight gap-x-6">
             {
               project.linkListItems.map((item, idx) => (
-                <li key={idx} className="list-none my-3 border px-2 py-1 rounded border-epicyellow-normal hover:bg-black">
+                <li key={idx} className="px-2 py-1 my-3 list-none border rounded border-epicyellow-normal hover:bg-black">
                   <a href={item.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex w-max text-xs sm:text-base font-semibold hover:text-epicyellow-normal duration-200"
+                    className="flex text-xs font-semibold duration-200 w-max sm:text-base hover:text-epicyellow-normal"
                   >
-                    <ExternalLinkIcon className="w-4 h-4 mt-0 sm:mt-1 mr-1" />
+                    <ExternalLinkIcon className="w-4 h-4 mt-0 mr-1 sm:mt-1" />
                     {item.text}
                   </a>
                 </li>
@@ -63,7 +63,7 @@ export const ProjectsSection = ({ id, setActiveSectionId }) => {
   return (
     <SectionDiv id={id} setActiveSectionId={setActiveSectionId}>
       <SectionTitle colorClass="text-gray-50">
-        Projects
+        Personal Projects
       </SectionTitle>
       <SectionContent>
         <Masonry
@@ -71,7 +71,7 @@ export const ProjectsSection = ({ id, setActiveSectionId }) => {
             default: 2,
             1200: 1,
           }}
-          className="flex -ml-7 w-auto"
+          className="flex w-auto -ml-7"
           columnClassName="my-masonry-grid_column">
           {
             projectList
