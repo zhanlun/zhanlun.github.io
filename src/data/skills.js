@@ -1,16 +1,17 @@
 module.exports = {
   skillsData: [
-    'React',
-    'React Native',
-    'JavaScript',
-    'TypeScript',
-    'Node.js',
-    'SCSS',
-    'Python',
-    'SQL',
-    'Java',
-    // 'ASP.NET',
-    'HTML & CSS',
-    // 'PHP',
-  ]
-}
+    "React",
+    "React Native",
+    "TypeScript/JavaScript",
+    "Android",
+    "Kotlin",
+    "Jetpack Compose",
+    "Java",
+    "Bitrise",
+    "Node.js",
+    "SCSS",
+    "SQL",
+    "HTML",
+    "CSS",
+  ],
+};

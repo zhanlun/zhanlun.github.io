@@ -1,27 +1,60 @@
 module.exports = {
   experienceData: [
     {
-      title: 'Junior Full Stack Developer',
-      subtitle: 'Life Line Lab • 2021-Current',
+      title: "Mobile Developer",
+      companyName: "respond.io",
+      timeline: "2023 - Present",
+      companyURL: "https://respond.io",
       listItems: [
-        'Contributed to the development and maintenance of web & mobile applications, with a focus on React & React Native',
-        'Projects include E-commerce website and employee health survey application',
+        "Developed a new mobile app for respond.io - an AI-powered customer conversation management software",
+        "Composer revamp using rich text editor, with features such as highlighted mentions and keyboard shortcuts",
+        "Enhanced Bitrise CI/CD pipelines",
+        "Built custom UI components with various gestures and animations",
       ],
-      bottomSubtitle: 'Technologies Used',
+      bottomSubtitle: "Technologies Used",
       bottomListItems: [
-        'React', 'React Native', 'SCSS', 'TypeScript', 'Redux', 'Recoil', 'Node.js', 'ArangoDB',
-      ]
+        "React Native",
+        "TypeScript",
+        "Zustand",
+        "React Query",
+        "Android (Kotlin)",
+        "Bitrise",
+        "Instabug",
+        "Sentry",
+      ],
     },
     {
-      title: 'Internship',
-      subtitle: 'Huawei Technologies (Malaysia) • 2020-2021',
+      title: "Junior Full Stack Developer",
+      companyName: "Life Line Lab",
+      timeline: "2021 - 2023",
+      companyURL: "https://lifelinelab.io",
       listItems: [
-        'Involved in development & maintenance of internal systems'
+        "Web and mobile app development for client projects, including both existing and greenfield initiatives.",
+        "E-commerce website development, with a focus on product/inventory, chat functionality, voucher systems, and order modules.",
+        "Contributions to the Employee Wellness Platform (XsBenefits), specializing in dynamic survey features, health diaries, and symptom trackers.",
       ],
-      bottomSubtitle: 'Technologies Used',
+      bottomSubtitle: "Technologies Used",
       bottomListItems: [
-        'JavaScript', 'HTML & CSS', 'SQL', 'Huawei GDE',
-      ]
+        "React",
+        "React Native",
+        "SCSS",
+        "TypeScript",
+        "Redux",
+        "Recoil",
+        "Node.js",
+        "ArangoDB",
+      ],
+    },
+    {
+      title: "Internship",
+      companyName: "Huawei (Malaysia)",
+      companyURL: "https://www.huawei.com/my/",
+      timeline: "2020 - 2021",
+      listItems: [
+        "Full-stack development using low-code development platform Huawei GDE with JavaScript and SQL",
+      ],
+      bottomSubtitle: "Technologies Used",
+      bottomListItems: ["JavaScript", "HTML & CSS", "SQL", "Huawei GDE"],
     },
     // {
     //   title: 'Competition',
@@ -34,5 +67,5 @@ module.exports = {
     //     'Python', 'SQL',
     //   ]
     // },
-  ]
-}
+  ],
+};
