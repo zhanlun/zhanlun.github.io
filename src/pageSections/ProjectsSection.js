@@ -77,7 +77,7 @@ export const ProjectsSection = ({ id, setActiveSectionId }) => {
             default: 2,
             1200: 1,
           }}
-          className="flex w-auto -ml-7"
+          className="flex w-auto mr-6 -ml-10"
           columnClassName="my-masonry-grid_column"
         >
           {projectList}
